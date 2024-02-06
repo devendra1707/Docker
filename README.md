@@ -107,14 +107,12 @@ docker logout => to logout from docker hub
 --------------------------------------------------------------------
 
 
-
-docker build -t [any name]
+docker build -t [image name which you want] .
 
 docker run --name [any name] [container name]
 
 
 Deploy Spring Boot Project Using Docker
-
 ---------------------------------------
 FROM openjdk:
 
@@ -126,12 +124,10 @@ COPY . /jv/DockerJava/
 RUN javac Test.java
 
 CMD ["java","-jar","file_name.jar"]
-
 EXPOSE 8080
 
 
----------------------------------------
-
+===============
 docker build -t buildboot
 
 
@@ -139,19 +135,17 @@ docker images
 
 docker run --name bootproject -it -d buildboot
 
+To check java version 
+-----------------------------------
+docker container_name java -version
 
 
 
 
+Run zipkin using docker image
+----------------------------------------
 
-
-
-
-
-
-
-
-
+docker run -d -p 9411:9411 openzipkin/zipkin
 
 
 
