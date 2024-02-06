@@ -130,7 +130,8 @@ CMD ["java","-jar","file_name.jar"]
 EXPOSE 8080
 
 
-===============
+---------------------------------------
+
 docker build -t buildboot
 
 
